@@ -1,0 +1,12 @@
+{
+    "data": {
+        "id": 514,
+        "username": "1640847468",
+        "role_id": -1,
+        "create_time": 1640847468
+    },
+    "meta": {
+        "msg": "创建成功",
+        "status": 201
+    }
+}

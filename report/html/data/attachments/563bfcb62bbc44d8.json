@@ -1,0 +1,8 @@
+{
+    "token": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjUwMCwicmlkIjowLCJpYXQiOjE2NDA4NDc0NjgsImV4cCI6MTY0MDkzMzg2OH0.tDRIRdfkQiMxIZHXeMpiei3vg5nV6Tpsa2kG-AsSerw",
+    "userId": 500,
+    "meta": {
+        "msg": "登录成功",
+        "status": 200
+    }
+}

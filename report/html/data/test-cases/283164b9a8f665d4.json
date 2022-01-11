@@ -1,0 +1,228 @@
+{
+  "uid" : "283164b9a8f665d4",
+  "name" : "get请求查询用户数据列表",
+  "fullName" : "test.test_api#test_main",
+  "historyId" : "f9a3a528aa08d345b131e068670a2332",
+  "time" : {
+    "start" : 1640847468138,
+    "stop" : 1640847468143,
+    "duration" : 5
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: 第1个断言失败 -|- 实际结果:{'msg': 'pagenum 参数错误', 'status': 400} || 预期结果: {'msg': '登录成功', 'status': 200}",
+  "statusTrace" : "cls = <class 'tools.data_process.DataProcess'>, response = {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}\nexpect_str = '{\"$.meta\":{\\'msg\\': \\'登录成功\\', \\'status\\': 200}}'\n\n    @classmethod\n    def assert_result(cls, response: dict, expect_str: str):\n        \"\"\" 预期结果实际结果断言方法\n        :param response: 实际响应结果\n        :param expect_str: 预期响应内容，从excel中读取\n        return None\n        \"\"\"\n        # 后置sql变量转换\n        allure_step(\"当前可用参数池\", cls.extra_pool)\n        expect_str = rep_expr(expect_str, cls.extra_pool)\n        expect_dict = convert_json(expect_str)\n        index = 0\n        for k, v in expect_dict.items():\n            # 获取需要断言的实际结果部分\n            actual = extractor(response, k)\n            index += 1\n            logger.info(\n                f'第{index}个断言,实际结果:{actual} | 预期结果:{v} \\n断言结果 {actual == v}')\n            allure_step(f'第{index}个断言', f'实际结果:{actual} = 预期结果:{v}')\n            try:\n>               assert actual == v\nE               AssertionError\n\ntools/data_process.py:133: AssertionError\n\nDuring handling of the above exception, another exception occurred:\n\ncases = ['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', ...]\n\n    def test_main(cases):   # 不使用数据库功能\n        # 发送请求\n        response, expect, sql = client.action(cases)\n        # 断言操作\n>       DataProcess.assert_result(response, expect)\n\ntest/test_api.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'tools.data_process.DataProcess'>, response = {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}\nexpect_str = '{\"$.meta\":{\\'msg\\': \\'登录成功\\', \\'status\\': 200}}'\n\n    @classmethod\n    def assert_result(cls, response: dict, expect_str: str):\n        \"\"\" 预期结果实际结果断言方法\n        :param response: 实际响应结果\n        :param expect_str: 预期响应内容，从excel中读取\n        return None\n        \"\"\"\n        # 后置sql变量转换\n        allure_step(\"当前可用参数池\", cls.extra_pool)\n        expect_str = rep_expr(expect_str, cls.extra_pool)\n        expect_dict = convert_json(expect_str)\n        index = 0\n        for k, v in expect_dict.items():\n            # 获取需要断言的实际结果部分\n            actual = extractor(response, k)\n            index += 1\n            logger.info(\n                f'第{index}个断言,实际结果:{actual} | 预期结果:{v} \\n断言结果 {actual == v}')\n            allure_step(f'第{index}个断言', f'实际结果:{actual} = 预期结果:{v}')\n            try:\n                assert actual == v\n            except AssertionError:\n>               raise AssertionError(\n                    f'第{index}个断言失败 -|- 实际结果:{actual} || 预期结果: {v}')\nE               AssertionError: 第1个断言失败 -|- 实际结果:{'msg': 'pagenum 参数错误', 'status': 400} || 预期结果: {'msg': '登录成功', 'status': 200}\n\ntools/data_process.py:135: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "cases",
+    "time" : {
+      "start" : 1640847468138,
+      "stop" : 1640847468138,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: 第1个断言失败 -|- 实际结果:{'msg': 'pagenum 参数错误', 'status': 400} || 预期结果: {'msg': '登录成功', 'status': 200}",
+    "statusTrace" : "cls = <class 'tools.data_process.DataProcess'>, response = {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}\nexpect_str = '{\"$.meta\":{\\'msg\\': \\'登录成功\\', \\'status\\': 200}}'\n\n    @classmethod\n    def assert_result(cls, response: dict, expect_str: str):\n        \"\"\" 预期结果实际结果断言方法\n        :param response: 实际响应结果\n        :param expect_str: 预期响应内容，从excel中读取\n        return None\n        \"\"\"\n        # 后置sql变量转换\n        allure_step(\"当前可用参数池\", cls.extra_pool)\n        expect_str = rep_expr(expect_str, cls.extra_pool)\n        expect_dict = convert_json(expect_str)\n        index = 0\n        for k, v in expect_dict.items():\n            # 获取需要断言的实际结果部分\n            actual = extractor(response, k)\n            index += 1\n            logger.info(\n                f'第{index}个断言,实际结果:{actual} | 预期结果:{v} \\n断言结果 {actual == v}')\n            allure_step(f'第{index}个断言', f'实际结果:{actual} = 预期结果:{v}')\n            try:\n>               assert actual == v\nE               AssertionError\n\ntools/data_process.py:133: AssertionError\n\nDuring handling of the above exception, another exception occurred:\n\ncases = ['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', ...]\n\n    def test_main(cases):   # 不使用数据库功能\n        # 发送请求\n        response, expect, sql = client.action(cases)\n        # 断言操作\n>       DataProcess.assert_result(response, expect)\n\ntest/test_api.py:35: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\ncls = <class 'tools.data_process.DataProcess'>, response = {'data': None, 'meta': {'msg': 'pagenum 参数错误', 'status': 400}}\nexpect_str = '{\"$.meta\":{\\'msg\\': \\'登录成功\\', \\'status\\': 200}}'\n\n    @classmethod\n    def assert_result(cls, response: dict, expect_str: str):\n        \"\"\" 预期结果实际结果断言方法\n        :param response: 实际响应结果\n        :param expect_str: 预期响应内容，从excel中读取\n        return None\n        \"\"\"\n        # 后置sql变量转换\n        allure_step(\"当前可用参数池\", cls.extra_pool)\n        expect_str = rep_expr(expect_str, cls.extra_pool)\n        expect_dict = convert_json(expect_str)\n        index = 0\n        for k, v in expect_dict.items():\n            # 获取需要断言的实际结果部分\n            actual = extractor(response, k)\n            index += 1\n            logger.info(\n                f'第{index}个断言,实际结果:{actual} | 预期结果:{v} \\n断言结果 {actual == v}')\n            allure_step(f'第{index}个断言', f'实际结果:{actual} = 预期结果:{v}')\n            try:\n                assert actual == v\n            except AssertionError:\n>               raise AssertionError(\n                    f'第{index}个断言失败 -|- 实际结果:{actual} || 预期结果: {v}')\nE               AssertionError: 第1个断言失败 -|- 实际结果:{'msg': 'pagenum 参数错误', 'status': 400} || 预期结果: {'msg': '登录成功', 'status': 200}\n\ntools/data_process.py:135: AssertionError",
+    "steps" : [ {
+      "name" : "请求地址: http://127.0.0.1:8000/api/private/v1/users",
+      "time" : {
+        "start" : 1640847468138,
+        "stop" : 1640847468138,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "请求头",
+      "time" : {
+        "start" : 1640847468138,
+        "stop" : 1640847468139,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5e20fa8099386faa",
+        "name" : "请求头",
+        "source" : "5e20fa8099386faa.json",
+        "type" : "application/json",
+        "size" : 420
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "请求数据",
+      "time" : {
+        "start" : 1640847468139,
+        "stop" : 1640847468139,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "41027150ff858163",
+        "name" : "请求数据",
+        "source" : "41027150ff858163.json",
+        "type" : "application/json",
+        "size" : 42
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "响应耗时(s): 0.001626",
+      "time" : {
+        "start" : 1640847468142,
+        "stop" : 1640847468142,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "响应结果",
+      "time" : {
+        "start" : 1640847468142,
+        "stop" : 1640847468142,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "c1bd412e2dddf416",
+        "name" : "响应结果",
+        "source" : "c1bd412e2dddf416.json",
+        "type" : "application/json",
+        "size" : 102
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "当前可用参数池",
+      "time" : {
+        "start" : 1640847468142,
+        "stop" : 1640847468142,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "563bfcb62bbc44d8",
+        "name" : "当前可用参数池",
+        "source" : "563bfcb62bbc44d8.json",
+        "type" : "application/json",
+        "size" : 271
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "第1个断言",
+      "time" : {
+        "start" : 1640847468143,
+        "stop" : 1640847468143,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "54804e7a45f11901",
+        "name" : "第1个断言",
+        "source" : "54804e7a45f11901.json",
+        "type" : "application/json",
+        "size" : 115
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 5,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_api"
+  }, {
+    "name" : "host",
+    "value" : "DXPdeMacBook-Pro.local"
+  }, {
+    "name" : "thread",
+    "value" : "13075-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_api"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "cases",
+    "value" : "['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', '', '{\"pagenum\": 1, \"pagesize\": \"12\"}', '', '', '{\"$.meta\":${meta}}']"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "283164b9a8f665d4.json",
+  "parameterValues" : [ "['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', '', '{\"pagenum\": 1, \"pagesize\": \"12\"}', '', '', '{\"$.meta\":${meta}}']" ]
+}

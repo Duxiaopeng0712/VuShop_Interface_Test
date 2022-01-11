@@ -1,0 +1,200 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DXPdeMacBook-Pro.local",
+    "children" : [ {
+      "name" : "13075-MainThread",
+      "children" : [ {
+        "name" : "修改用户状态接口",
+        "uid" : "a7faee247447a32d",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468329,
+          "stop" : 1640847468344,
+          "duration" : 15
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c6', '修改用户状态接口', '{\"Authorization\": \"${token}\"}', 'users/${userId}/state/${create_time}', 'put', 'data', '', '', '', '', '{\"$.meta\":{\"msg\": \"设置状态成功\", \"status\": 200}}']" ]
+      }, {
+        "name" : "添加用户正常接口数据",
+        "uid" : "8eb4eb45f49ab493",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468221,
+          "stop" : 1640847468327,
+          "duration" : 106
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c5', '添加用户正常接口数据', '{\"Authorization\": \"${token}\"}', 'users', 'post', 'data', '', '{\"username\": \"${get_current_highest()}\",\"password\": \"123456\"}', '{\"userId\": \"$.data.id\",\"userId5\":\"$.data.id\",\"create_time\":\"$.data.create_time\"}', '', '{\"$.meta\":{\"msg\":\"创建成功\",\"status\":201}}']" ]
+      }, {
+        "name" : "修改用户状态为2",
+        "uid" : "e5550c83912972bf",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468346,
+          "stop" : 1640847468354,
+          "duration" : 8
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c7', '修改用户状态为2', '{\"Authorization\": \"${token}\"}', 'users/${userId5}/state/2', 'put', 'data', '', '', '', '', '{\"$.meta\":{\"msg\": \"设置状态成功\", \"status\": 200}}']" ]
+      }, {
+        "name" : "调试自定义函数功能",
+        "uid" : "a31b5d517bac9190",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468370,
+          "stop" : 1640847468376,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c17', '调试自定义函数功能', '{\"Authorization\": \"${token}\"}', 'users/', 'post', 'data', '', '{\"username\": \"tery\",\"password\": \"${sum_data(1,3)}\"}', '', '', '{\"$.meta.msg\": \"用户名已存在\"}']" ]
+      }, {
+        "name" : "调试函数sum_data(),从path需要运算",
+        "uid" : "47a7854e0053ef7e",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468392,
+          "stop" : 1640847468399,
+          "duration" : 7
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c19', '调试函数sum_data(),从path需要运算', '{\"Authorization\": \"${token}\"}', 'users/${sum_data(${userId}, 2)}/', 'put', 'data', '', '{\"username\": \"tery\",\"password\": ${sum_data(${userId5}, 66)}, \"timer\":  ${get_current_highest()}, \"timer_str\": \" ${get_current_highest()}\"}', '', '', '{${userId}:${userId5}}']" ]
+      }, {
+        "name" : "get请求实现登录",
+        "uid" : "ffc7daf479372fb4",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847467937,
+          "stop" : 1640847467959,
+          "duration" : 22
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c1', 'get请求实现登录', '{\"num\":\"${sum_data(1,2)}\"}', 'login', 'get', 'params', '', '{\"username\": \"admin\", \"password\": \"\"}', '', 'select * from apis; select * from cases', '{\"$.meta.status\":400}']" ]
+      }, {
+        "name" : "调试运算新功能,从响应提取后运算",
+        "uid" : "e925c52141c7bdaf",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "failed",
+        "time" : {
+          "start" : 1640847468379,
+          "stop" : 1640847468384,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c18', '调试运算新功能,从响应提取后运算', '{\"Authorization\": \"${token}\"}', 'users/', 'post', 'data', '', '{\"username\": \"tery\",\"password\": ${get_current_highest()}}', '', '', '{\"$.meta.msg\": \"成功\"}']" ]
+      }, {
+        "name" : "删除用户zy7y",
+        "uid" : "92ac2f7b68eea5d5",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468356,
+          "stop" : 1640847468368,
+          "duration" : 12
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c8', '删除用户zy7y', '${set_token(\"${token}\")}', 'users/${userId}', 'delete', 'params', '', '', '', '', '{\"$.meta\":{\"msg\": \"删除成功\", \"status\": 200}}']" ]
+      }, {
+        "name" : "get请求查询用户数据列表",
+        "uid" : "6bbe358629562e48",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847468116,
+          "stop" : 1640847468136,
+          "duration" : 20
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c3', 'get请求查询用户数据列表', '{\"Authorization\": \"${token}\"}', 'users', 'get', 'params', '', '{\"pagenum\": 1, \"pagesize\": 12, \"meta\": ${meta}, \"userId\": ${userId}}', '', '', '{\"$.meta\":{\"msg\": \"获取管理员列表成功\", \"status\": 200}}']" ]
+      }, {
+        "name" : "get请求查询用户数据列表",
+        "uid" : "283164b9a8f665d4",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "failed",
+        "time" : {
+          "start" : 1640847468138,
+          "stop" : 1640847468143,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', '', '{\"pagenum\": 1, \"pagesize\": \"12\"}', '', '', '{\"$.meta\":${meta}}']" ]
+      }, {
+        "name" : "post请求实现登录",
+        "uid" : "5df7eac595f1eaa",
+        "parentUid" : "b4791f689efc6398a4550675eb509170",
+        "status" : "passed",
+        "time" : {
+          "start" : 1640847467961,
+          "stop" : 1640847468114,
+          "duration" : 153
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c2', 'post请求实现登录', '', 'login', 'post', 'data', '', '{\"username\": \"admin\", \"password\": \"123456\"}', '{\"token\": \"$.data.token\", \"userId\": \"$.data.id\", \"meta\": \"$.meta\"}', 'select * from cases where id=${userId};', '{\"$.meta\":{ \"msg\": \"登录成功\", \"status\": 200 }}']" ]
+      } ],
+      "uid" : "b4791f689efc6398a4550675eb509170"
+    } ],
+    "uid" : "16f031967f249c34ad3674d70e796972"
+  } ]
+}

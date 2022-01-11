@@ -1,0 +1,51 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: 第1个断言失败 -|- 实际结果:{'msg': 'pagenum 参数错误', 'status': 400} || 预期结果: {'msg': '登录成功', 'status': 200}",
+      "children" : [ {
+        "name" : "get请求查询用户数据列表",
+        "uid" : "283164b9a8f665d4",
+        "parentUid" : "a6f21b71837023d05ae46165e8467abb",
+        "status" : "failed",
+        "time" : {
+          "start" : 1640847468138,
+          "stop" : 1640847468143,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c4', 'get请求查询用户数据列表', '', 'users', 'get', 'data', '', '{\"pagenum\": 1, \"pagesize\": \"12\"}', '', '', '{\"$.meta\":${meta}}']" ]
+      } ],
+      "uid" : "a6f21b71837023d05ae46165e8467abb"
+    }, {
+      "name" : "AssertionError: 第1个断言失败 -|- 实际结果:用户名已存在 || 预期结果: 成功",
+      "children" : [ {
+        "name" : "调试运算新功能,从响应提取后运算",
+        "uid" : "e925c52141c7bdaf",
+        "parentUid" : "ff030c29cd5686e4f1a2d4a6d205d0ab",
+        "status" : "failed",
+        "time" : {
+          "start" : 1640847468379,
+          "stop" : 1640847468384,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "['c18', '调试运算新功能,从响应提取后运算', '{\"Authorization\": \"${token}\"}', 'users/', 'post', 'data', '', '{\"username\": \"tery\",\"password\": ${get_current_highest()}}', '', '', '{\"$.meta.msg\": \"成功\"}']" ]
+      } ],
+      "uid" : "ff030c29cd5686e4f1a2d4a6d205d0ab"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}
